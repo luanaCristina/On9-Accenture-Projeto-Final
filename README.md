@@ -108,4 +108,4 @@ http://localhost:3001/message/create
 }
 ~~~
 
-## Obs.: O body das rotas POST são modelos para criar, usar ou testar a API. Por ter validação para não criar com o mesmo cpf e e-mail devemos alterar os mesmos.
+# Obs.: O body das rotas POST são modelos para criar, usar ou testar a API. Por ter validação para não criar com o mesmo cpf e e-mail devemos alterar os mesmos.
