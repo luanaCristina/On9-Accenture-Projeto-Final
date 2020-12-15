@@ -10,6 +10,7 @@ const messageSchema = new mongoose.Schema(
     },
     locationAmbulance: { type: String },
     destinationHospital: { type: String },
+    userAmbulanceInfo: { type: String },
     telephoneNumberAmbulance: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "AmbulanceUser",
@@ -24,6 +25,7 @@ const messageSchema = new mongoose.Schema(
       ref: "TransitAgentUser",
     },
     transitAgentlocation: { type: String },
+    userAgentInfo: { type: String},
     telephoneNumberAgent: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "TransitAgentUser",

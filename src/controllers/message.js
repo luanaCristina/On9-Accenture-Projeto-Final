@@ -38,22 +38,24 @@ exports.postNewMessage = async (req, res, next) => {
       locationAmbulance: req.body.locationAmbulance,
       destinationHospital: req.body.destinationHospital,
       routesToHopital: req.body.routesToHopital,
-      userAmbulance,
+      userAmbulanceInfo: userAmbulance
+      
     });
     newMessageAmbulance
       .save()
       .then((newMessageAmbulance) => {
-        return res.status(201).json(newMessageAmbulance + userAmbulance);
+        return res.status(201).json(newMessageAmbulance);
       })
       .catch((err) => next(err, "There is not an user with this id."));
   } else if (userAgent) {
     const newMessageAgent = new MessageSend({
       transitAgentlocation: req.body.transitAgentlocation,
+      userAgentInfo: userAgent
     });
     newMessageAgent
       .save()
       .then((newMessageAgent) => {
-        return res.status(201).json(newMessageAgent + userAgent);
+        return res.status(201).json(newMessageAgent);
       })
       .catch((err) => next(err, "There is not an user with this id."));
   } else {
