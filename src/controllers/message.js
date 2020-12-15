@@ -38,8 +38,9 @@ exports.postNewMessage = async (req, res, next) => {
       locationAmbulance: req.body.locationAmbulance,
       destinationHospital: req.body.destinationHospital,
       routesToHopital: req.body.routesToHopital,
-      userAmbulanceInfo: userAmbulance
-      
+      ambulanceName: userAmbulance.driverName,
+      ambulancePlate: userAmbulance.licensePlate,
+      ambulanceTelephone: userAmbulance.telephoneNumberAmbulance
     });
     newMessageAmbulance
       .save()
@@ -50,7 +51,9 @@ exports.postNewMessage = async (req, res, next) => {
   } else if (userAgent) {
     const newMessageAgent = new MessageSend({
       transitAgentlocation: req.body.transitAgentlocation,
-      userAgentInfo: userAgent
+      agentName: userAgent.transitAgentName,
+      telephoneAgent: userAgent.telephoneNumberAgent
+
     });
     newMessageAgent
       .save()
