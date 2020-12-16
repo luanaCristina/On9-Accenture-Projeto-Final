@@ -20,6 +20,7 @@ exports.getById = (req, res) => {
     })
     .catch((err) => next(err));
 };
+  
 
 exports.postNewMessage = async (req, res, next) => {
   let { id } = req.body;
